@@ -1,0 +1,34 @@
+1. Create one round of Rock Paper Scissors
+2. Make the game run 5 times and keep score 
+
+1:
+
+FUNCTION - GET COMPUTER CHOICE 
+- generate random number from 1-3
+- if 1 return "rock"
+- else if 2 return "paper"
+- else return "scissors"
+
+FUNCTION - GET USER CHOICE 
+- case-insensitive prompt: "rock, paper or scissors?"
+- return choice 
+
+FUNCTION - PLAY ONE ROUND 
+- if user choose rock and computer choose rock, say "it's a tie"
+- else if user choose rock and computer choose paper, say "computer won"
+- else if user choose rock and computer choose scissor, say "you lost"
+
+- else if user choose paper and computer choose rock, say "you won"
+- else if user choose paper and computer choose paper, say "it's a tie"
+- else if user choose paper and computer choose scissor, say "you lost"
+
+- else if user choose scissor and computer choose rock, say "you lost"
+- else if user choose scissor and computer choose paper, say "you won"
+- else if user choose scissor and computer choose scissor, say "you lost"
+
+- else, say "wrong input, type: rock/paper/scissor"
+
+2: 
+?????????
+
+
