@@ -23,3 +23,31 @@ function getPlayerChoice() {
 let playerSelection = getPlayerChoice();
 
 // play one round 
+function playOneRound(playerSelection, computerSelection) {
+    if (playerSelection === "Rock" && computerSelection === "Rock") {
+        alert("It's a tie!");
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        alert("You lost!");
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        alert("You won!");
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        alert("You won!");
+    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+        alert("It's a tie!");
+    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+        alert("You lost!");
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        alert("You lost!");
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        alert("You won!");
+    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        alert("You won!");
+    } else {
+        alert("Something went horribly wrong!");
+    }
+}
+
+// test
+console.log("computer: " + computerSelection)
+console.log("player: " + playerSelection)
+console.log(playOneRound(playerSelection, computerSelection));
