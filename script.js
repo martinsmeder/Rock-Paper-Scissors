@@ -23,31 +23,41 @@ function getPlayerChoice() {
 let playerSelection = getPlayerChoice();
 
 // play one round 
-function playOneRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Rock") {
-        alert("It's a tie!");
+        return "It's a tie!";
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        alert("You lost!");
+        return "You lost!";
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        alert("You won!");
+        return "You won!";
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        alert("You won!");
+        return "You won!";
     } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        alert("It's a tie!");
+        return "It's a tie!";
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        alert("You lost!");
+        return "You lost!";
     } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        alert("You lost!");
+        return "You lost!";
     } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        alert("You won!");
+        return "You won!";
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        alert("You won!");
+        return "You won!";
     } else {
-        alert("Something went horribly wrong!");
+        return "Something went horribly wrong!";
     }
 }
 
-// test
-console.log("computer: " + computerSelection)
-console.log("player: " + playerSelection)
-console.log(playOneRound(playerSelection, computerSelection));
+// play 5 rounds
+for (let i = 0; i < 5; i++) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+    let playRoundResult = playRound(playerSelection, computerSelection);
+    console.log("Computer: " + computerSelection)
+    console.log("Player: " + playerSelection)
+    console.log(playRoundResult);
+    console.log(" ");
+}
+
+
+
+
