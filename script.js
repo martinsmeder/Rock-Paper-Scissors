@@ -1,7 +1,3 @@
-// 1. fix "wrong input" after playGameAnswer = no
-// 2. fix "it's a tie" when wrong input during playRound 
-// 3. check others code --> clean up --> move on  
-
 let playerScore = 0;
 let computerScore = 0;
 let playRoundResult = 0;
@@ -54,8 +50,15 @@ function game() {
             } else if (playerSelection === "scissors" && computerSelection === "paper") {
                 playerScore++;
                 return "You won!";
+            } else if (playerSelection === "rock" && computerSelection === "rock") {
+                return "It's a tie!";
+            } else if (playerSelection === "paper" && computerSelection === "paper") {
+                return "It's a tie!";
+            } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+                return "It's a tie!";
             } else {
-                return "It's a tie";
+                computerScore++;
+                return "Wrong input! The computer gets 1 point!"
             }
         }
         let playRoundResult = playRound(playerSelection, computerSelection);
@@ -93,11 +96,10 @@ function initializeGame() {
     if (playGameAnswer === "no") {
         alert("Bye!");
         return;
-    } else {
-        alert("Wrong input! Type: Yes/No ");
-        initializeGame();
     }
-    
+
+    // why does every else statement i add here get executed when 
+    // playGameAnswer = "no" after one or more games?
 }
 console.log(initializeGame());
 
