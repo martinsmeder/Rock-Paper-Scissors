@@ -4,9 +4,20 @@ const scissorsButton = document.querySelector('#scissors');
 const container = document.querySelector("#container");
 
 // display round result
-const para = document.createElement("p");
-para.classList.add("para");
-container.appendChild(para);
+const roundResult = document.createElement("p");
+roundResult.classList.add("roundResult");
+container.appendChild(roundResult);
+
+// display player score
+const displayPlayerScore = document.createElement("p");
+displayPlayerScore.classList.add("displayPlayerScore");
+container.appendChild(displayPlayerScore);
+
+// display computer score
+const displayComputerScore = document.createElement("p");
+displayComputerScore.classList.add("displayComputerScore");
+container.appendChild(displayComputerScore);
+
 
 
 let playerSelection = "";
@@ -43,27 +54,32 @@ let computerSelection = getComputerChoice();
 // play one round 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "paper") {
+        roundResult.textContent = "You lost!";
         computerScore++;
-        para.textContent = "You lost!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        roundResult.textContent = "You won!";
         playerScore++;
-        para.textContent = "You won!";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
+        roundResult.textContent = "You won!";
         playerScore++;
-        para.textContent = "You won!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        roundResult.textContent = "You lost!";
         computerScore++;
-        para.textContent = "You lost!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        roundResult.textContent = "You lost!";
         computerScore++;
-        para.textContent = "You lost!";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        roundResult.textContent = "You won!";
         playerScore++;
-        para.textContent = "You won!";
     } else {
-        para.textContent = "It's a tie!";
+        roundResult.textContent = "It's a tie!";
     } 
+
+displayPlayerScore.textContent = "Player: " + playerScore;
+displayComputerScore.textContent = "Computer: " + computerScore;
 }
+
+
 
 
 
