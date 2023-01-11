@@ -81,8 +81,8 @@ function game() {
 
 // get input to start new game
 function initializeGame() {
-    let playGameAnswer = prompt("Start new game? (Yes/No): ").toLowerCase();
-    
+    let playGameAnswer = prompt("Start new game? (Yes/No): ").toLowerCase();  
+
     while (playGameAnswer === "yes") {
         playerScore = 0;
         computerScore = 0;
@@ -91,15 +91,12 @@ function initializeGame() {
         game();
         initializeGame();
         playGameAnswer++;
-    }    
-    
+    }  
+
     if (playGameAnswer === "no") {
         alert("Bye!");
         return;
-    }
-
-    // why does every else statement i add here get executed when 
-    // playGameAnswer = "no" after one or more games?
+    } 
 }
 console.log(initializeGame());
 
