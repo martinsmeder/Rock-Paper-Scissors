@@ -1,7 +1,9 @@
+// to do: Play Button --> Replace with choice --> Play again ---> Additional text
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const container = document.querySelector("#container");
+
 
 // display round result
 const roundResult = document.createElement("p");
@@ -51,11 +53,11 @@ let computerSelection = getComputerChoice();
 
 // play one round 
 function playRound(playerSelection, computerSelection) {
-    // show buttons 
-    rockButton.style.visibility = "visible";
-    paperButton.style.visibility = "visible";
-    scissorsButton.style.visibility = "visible";
-    
+    // enable buttons
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+
     if (playerSelection === "rock" && computerSelection === "paper") {
         roundResult.textContent = "You lost!";
         computerScore++;
@@ -86,6 +88,7 @@ function playRound(playerSelection, computerSelection) {
 
     displayPlayerScore.textContent = "Player: " + playerScore;
     displayComputerScore.textContent = "Computer: " + computerScore;
+    console.log(computerSelection);
 
     // display winner 
     if (playerScore === 5) {
@@ -100,21 +103,26 @@ function playRound(playerSelection, computerSelection) {
     };
 }
 
+
+
 function newGame() {
     playerScore = 0;
     computerScore = 0;
-    // hide buttons 
-    rockButton.style.visibility = "hidden";
-    paperButton.style.visibility = "hidden";
-    scissorsButton.style.visibility = "hidden";
+
+    // disable buttons
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+    
     // create playButton
+    const gameResult = document.querySelector("#gameResult");
     const playButton = document.createElement("button");
     playButton.classList.add("playButton");
-    container.appendChild(playButton);
-    playButton.textContent = "Play again"
+    gameResult.appendChild(playButton);
+    playButton.textContent = "Play again";
 
     playButton.addEventListener('click', () => {
         playRound();
-        container.removeChild(playButton)
+        gameResult.removeChild(playButton)
     });
 }

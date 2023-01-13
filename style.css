@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+   
+}
+
+button { 
+    width: 100px;
+    height: 40px;  
+}
+
+#buttons.playButton {
+    text-align: center;
+}
+
+#container {
+    padding: 20px;
+}
