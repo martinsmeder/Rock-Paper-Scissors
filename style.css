@@ -5,24 +5,79 @@
 }
 
 body {
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
-    margin-top: 50px;
-   
+    font-family: 'Permanent Marker', cursive; 
+    background-color: #000;
+    color: #FFF;
+}
+
+header {
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+footer a:hover {
+    opacity: .5;
+}
+img {
+    width: 80px;
+    height: 80px;
 }
 
 button { 
     width: 100px;
-    height: 40px;  
+    height: 100px; 
+    margin: 15px; 
+
 }
 
-#buttons.playButton {
-    text-align: center;
+button:active {
+    transform: translateY(4px);
+}
+
+button:hover {
+    opacity: .8;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
 }
 
 #container {
     padding: 20px;
+}
+
+#container p {
+    padding: 3px;
+}
+
+#gameResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#gameResult button {
+    font-family: 'Permanent Marker', cursive;
+    width: 100px;
+    height: 40px;
 }
