@@ -5,19 +5,18 @@
 }
 
 body {
+    max-width: 900px;
     height: 100vh;
+    margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
-    font-family: 'Permanent Marker', cursive; 
-    background-color: #000;
-    color: #FFF;
+    font-family: 'Permanent Marker', cursive;
 }
 
 header {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 main {
@@ -29,22 +28,22 @@ main {
 
 footer a {
     text-decoration: none;
-    color: #FFF;
 }
 
 footer a:hover {
     opacity: .5;
 }
+
 img {
-    width: 80px;
-    height: 80px;
+    max-width: 900px;
+    width: 12vw;
+    height: 12vh;
 }
 
 button { 
-    width: 100px;
-    height: 100px; 
-    margin: 15px; 
-
+    max-width: 150px;
+    width: 15vw;
+    height: 15vh; 
 }
 
 button:active {
@@ -59,14 +58,28 @@ button:disabled {
     opacity: .5;
     cursor: not-allowed;
 }
+
+#buttons {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
 #choices {
-    width: 80vh;
+    max-width: 900px;
+    width: 50vw;
     display: flex;
     justify-content: space-between;
 }
 
+#choices img {
+    width: 8vw;
+    height: 8vh;
+}
+
 #score {
-    width: 40vh;
+    width: 50vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -76,6 +89,7 @@ button:disabled {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 10px;
 }
 
 .displayPlayerScore {
@@ -93,15 +107,17 @@ button:disabled {
  }
 
 #gameResult {
+    max-width: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 }
 
 #gameResult button {
     font-family: 'Permanent Marker', cursive;
-    width: 100px;
-    height: 40px;
+    max-width: 150px;
+    width: 15vw;
+    height: 5vh;
 }
