@@ -38,7 +38,7 @@ displayGameResult.style.visibility = "hidden"
 const displayPlayer = document.createElement("p");
 displayPlayer.classList.add("displayPlayer");
 player.appendChild(displayPlayer);
-displayPlayer.textContent = "Player: ";
+displayPlayer.textContent = "PLAYER: ";
 
 const displayPlayerScore = document.createElement("p");
 displayPlayerScore.classList.add("displayPlayerScore");
@@ -49,7 +49,7 @@ displayPlayerScore.textContent = playerScore;
 const displayComputer = document.createElement("p");
 displayComputer.classList.add("displayComputer");
 computer.appendChild(displayComputer);
-displayComputer.textContent = "Computer: ";
+displayComputer.textContent = "COMPUTER: ";
 
 const displayComputerScore = document.createElement("p");
 displayComputerScore.classList.add("displayComputerScore");
@@ -60,7 +60,7 @@ displayComputerScore.textContent = computerScore;
 const playButton = document.createElement("button");
 playButton.classList.add("playButton");
 gameResult.appendChild(playButton);
-playButton.textContent = "Play again";
+playButton.textContent = "PLAY AGAIN";
 playButton.style.visibility = "hidden"
 
 // get player choice 
@@ -88,6 +88,10 @@ function getComputerChoice() {
 }
 let computerSelection = getComputerChoice();
 
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // play one round 
 function playRound(playerSelection, computerSelection) {
     displayGameResult.style.visibility = "hidden"
@@ -101,32 +105,32 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "paper") {
         playerChoice.src = 'images/cave-painting.png';
         computerChoice.src = 'images/paper-bag.png';
-        roundResult.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+        roundResult.textContent = `You lost! ${capitalize(computerSelection)} beats ${playerSelection}.`;
         computerScore++;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerChoice.src = 'images/cave-painting.png';
         computerChoice.src = 'images/scissors.png';
-        roundResult.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+        roundResult.textContent = `You won! ${capitalize(playerSelection)} beats ${computerSelection}.`;
         playerScore++;
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playerChoice.src = 'images/paper-bag.png';
         computerChoice.src = 'images/cave-painting.png';
-        roundResult.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+        roundResult.textContent = `You won! ${capitalize(playerSelection)} beats ${computerSelection}.`;
         playerScore++;
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         playerChoice.src = 'images/paper-bag.png';
         computerChoice.src = 'images/scissors.png';
-        roundResult.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+        roundResult.textContent = `You lost! ${capitalize(computerSelection)} beats ${playerSelection}.`;
         computerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         playerChoice.src = 'images/scissors.png';
         computerChoice.src = 'images/cave-painting.png';
-        roundResult.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+        roundResult.textContent = `You lost! ${capitalize(computerSelection)} beats ${playerSelection}.`;
         computerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerChoice.src = 'images/scissors.png';
         computerChoice.src = 'images/paper-bag.png';
-        roundResult.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+        roundResult.textContent = `You won! ${capitalize(playerSelection)} beats ${computerSelection}.`;
         playerScore++;
     } else if (playerSelection === "rock" && computerSelection === "rock") {
         playerChoice.src = 'images/cave-painting.png';
