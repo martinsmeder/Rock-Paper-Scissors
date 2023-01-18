@@ -13,30 +13,25 @@ let computerScore = 0;
 
 // display choices and round result
 const playerChoice = document.createElement("img");
-playerChoice.classList.add("playerChoice");
 choices.appendChild(playerChoice); 
 playerChoice.src = 'images/question.png';
 
 const roundResult = document.createElement("p");
-roundResult.classList.add("roundResult");
 choices.appendChild(roundResult);
 roundResult.textContent = "New game..."
 
 const computerChoice = document.createElement("img");
-computerChoice.classList.add("computerChoice");
 choices.appendChild(computerChoice);
 computerChoice.src = 'images/question.png';
 
 // display game result
 const displayGameResult = document.createElement("h2");
-displayGameResult.classList.add("displayGameResult");
 gameResult.appendChild(displayGameResult);
 displayGameResult.textContent = "...";
 displayGameResult.style.visibility = "hidden"
 
 // display player score
 const displayPlayer = document.createElement("p");
-displayPlayer.classList.add("displayPlayer");
 player.appendChild(displayPlayer);
 displayPlayer.textContent = "PLAYER: ";
 
@@ -47,7 +42,6 @@ displayPlayerScore.textContent = playerScore;
 
 // display computer score
 const displayComputer = document.createElement("p");
-displayComputer.classList.add("displayComputer");
 computer.appendChild(displayComputer);
 displayComputer.textContent = "COMPUTER: ";
 
@@ -58,12 +52,11 @@ displayComputerScore.textContent = computerScore;
 
 // create playButton
 const playButton = document.createElement("button");
-playButton.classList.add("playButton");
 gameResult.appendChild(playButton);
 playButton.textContent = "PLAY AGAIN";
 playButton.style.visibility = "hidden"
 
-// get player choice 
+// get player choice
 rockButton.addEventListener('click', () => {
     playRound("rock", getComputerChoice());
 });
@@ -77,7 +70,7 @@ scissorsButton.addEventListener('click', () => {
 });
 
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 1) {
         return "rock";
     } else if (randomNumber === 2) {
