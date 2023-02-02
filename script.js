@@ -18,7 +18,7 @@ playerChoice.src = 'images/question.png';
 
 const roundResult = document.createElement("p");
 choices.appendChild(roundResult);
-roundResult.textContent = "New game..."
+roundResult.textContent = "New game...";
 
 const computerChoice = document.createElement("img");
 choices.appendChild(computerChoice);
@@ -28,7 +28,7 @@ computerChoice.src = 'images/question.png';
 const displayGameResult = document.createElement("h2");
 gameResult.appendChild(displayGameResult);
 displayGameResult.textContent = "...";
-displayGameResult.style.visibility = "hidden"
+displayGameResult.style.visibility = "hidden";
 
 // display player score
 const displayPlayer = document.createElement("p");
@@ -54,7 +54,7 @@ displayComputerScore.textContent = computerScore;
 const playButton = document.createElement("button");
 gameResult.appendChild(playButton);
 playButton.textContent = "PLAY AGAIN";
-playButton.style.visibility = "hidden"
+playButton.style.visibility = "hidden";
 
 // get player choice
 rockButton.addEventListener('click', () => {
@@ -77,18 +77,18 @@ function getComputerChoice() {
         return "paper";
     } else {
         return "scissors";
-    }
-}
+    };
+};
 let computerSelection = getComputerChoice();
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
+};
 
 // play one round 
 function playRound(playerSelection, computerSelection) {
-    displayGameResult.style.visibility = "hidden"
-    playButton.style.visibility = "hidden"
+    displayGameResult.style.visibility = "hidden";
+    playButton.style.visibility = "hidden";
     
     // enable buttons
     rockButton.disabled = false;
@@ -137,22 +137,22 @@ function playRound(playerSelection, computerSelection) {
         playerChoice.src = 'images/scissors.png';
         computerChoice.src = 'images/scissors.png';
         roundResult.textContent = "It's a tie!";
-    }
+    };
 
     displayPlayerScore.textContent = playerScore;
     displayComputerScore.textContent = computerScore;
 
     // display winner 
     if (playerScore === 5) {
-        displayGameResult.style.visibility = "visible"
-        playButton.style.visibility = "visible"
+        displayGameResult.style.visibility = "visible";
+        playButton.style.visibility = "visible";
         displayGameResult.textContent = "YOU WON! HUMANITY LIVES TO SEE ANOTHER DAY...";
         newGame();
         return;
 
     } else if (computerScore === 5) {
-        displayGameResult.style.visibility = "visible"
-        playButton.style.visibility = "visible"
+        displayGameResult.style.visibility = "visible";
+        playButton.style.visibility = "visible";
         displayGameResult.textContent = "YOU LOST! HUMANITY HAD A GREAT RUN THOUGH...";
         newGame();
         return;
@@ -170,8 +170,8 @@ function newGame() {
 
     playButton.addEventListener('click', () => {
         playRound();
-        roundResult.textContent = "New game..."
+        roundResult.textContent = "New game...";
         playerChoice.src = 'images/question.png';
         computerChoice.src = 'images/question.png';
     });
-}
+};
